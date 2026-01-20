@@ -1,0 +1,17 @@
+.gitignore
+CHANGELOG.md
+CONTRIBUTING.md
+LICENSE.txt
+README.md
+pyproject.toml
+setup.cfg
+spheres_environment/__init__.py
+spheres_environment/base.py
+spheres_environment/environment.py
+spheres_environment/object.py
+spheres_environment/sphere.py
+spheres_environment.egg-info/PKG-INFO
+spheres_environment.egg-info/SOURCES.txt
+spheres_environment.egg-info/dependency_links.txt
+spheres_environment.egg-info/requires.txt
+spheres_environment.egg-info/top_level.txt
