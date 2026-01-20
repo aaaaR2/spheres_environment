@@ -1,4 +1,4 @@
-""" Data structures and methods for a 3D virtual environment that 
+"""Data structures and methods for a 3D virtual environment that
     contains interacting spherical objects.
 
 Examples
@@ -27,31 +27,29 @@ Change the properties from the default values.
 """
 
 # Copyright 2022 Carnegie Mellon University Neuromechatronics Lab (a.whit)
-# 
+#
 # This Source Code Form is subject to the terms of the Mozilla Public
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at https://mozilla.org/MPL/2.0/.
-# 
+#
 # Contact: a.whit (nml@whit.contact)
-
 
 # Local imports.
 from spheres_environment import base
 from spheres_environment.sphere import Sphere
 
+
 # Virtual environment class.
 class Environment(base.Environment):
-    """ Defines rules and data structures representing the interaction 
-        among spheres in a 3D virtual environment.
+    """Defines rules and data structures representing the interaction
+    among spheres in a 3D virtual environment.
     """
+
     object_type_map = dict(sphere=Sphere)
-    
-  
+
 
 # Main.
-if __name__ == '__main__':
+if __name__ == "__main__":
     import doctest
-    doctest.testmod()
-    
-  
 
+    doctest.testmod()

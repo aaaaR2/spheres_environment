@@ -1,4 +1,4 @@
-""" Data structure and methods for recording and manipulating the 
+"""Data structure and methods for recording and manipulating the
     properties of 3D spherical objects.
 
 Examples
@@ -37,13 +37,12 @@ Retrieve the sphere data in records format.
 """
 
 # Copyright 2022 Carnegie Mellon University Neuromechatronics Lab (a.whit)
-# 
+#
 # This Source Code Form is subject to the terms of the Mozilla Public
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at https://mozilla.org/MPL/2.0/.
-# 
+#
 # Contact: a.whit (nml@whit.contact)
-
 
 # Import collection abstract base classes.
 import collections.abc
@@ -51,44 +50,43 @@ import collections.abc
 # Local imports.
 from spheres_environment import base
 
+
 # Sphere class.
 class Sphere(base.Object):
-    """ A situated, volumetric, spherical object. """
-    
-    TYPE='sphere'
-    
+    """A situated, volumetric, spherical object."""
+
+    TYPE = "sphere"
+
     @base.object_property
     def position(self):
-        """ Position of the sphere in 3D space. """
+        """Position of the sphere in 3D space."""
         default = dict(x=0.0, y=0.0, z=0.0)
-        position = self.setdefault('position', default)
-        position = {k: float(position[k]) for k in ['x', 'y', 'z']}
+        position = self.setdefault("position", default)
+        position = {k: float(position[k]) for k in ["x", "y", "z"]}
         return position
-        
+
     @position.setter
     def position(self, value):
-        keys = ['x', 'y', 'z']
-        if isinstance(value, tuple): value = dict(zip(keys, value))
-        self['position'] = {k: float(v) for (k, v) in value.items()}
-    
+        keys = ["x", "y", "z"]
+        if isinstance(value, tuple):
+            value = dict(zip(keys, value))
+        self["position"] = {k: float(v) for (k, v) in value.items()}
+
     @base.object_property
     def radius(self):
-        """ Radius of the sphere. """
-        radius = self.setdefault('radius', 1.0)
+        """Radius of the sphere."""
+        radius = self.setdefault("radius", 1.0)
         return float(radius)
-    
+
     @radius.setter
     def radius(self, value):
-        value = value['value'] if isinstance(value, dict) else value
+        value = value["value"] if isinstance(value, dict) else value
         assert not isinstance(value, collections.abc.Collection)
-        self['radius'] = float(value)
-    
-  
+        self["radius"] = float(value)
+
 
 # Main.
-if __name__ == '__main__':
+if __name__ == "__main__":
     import doctest
-    doctest.testmod()
-    
-  
 
+    doctest.testmod()

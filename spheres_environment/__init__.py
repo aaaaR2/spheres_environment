@@ -1,4 +1,4 @@
-""" Data structures and methods for describing and manipulating 
+"""Data structures and methods for describing and manipulating
     spherical objects in a 3D virtual environment.
 
 Examples
@@ -23,23 +23,23 @@ Verify that the spheres overlap, given the default property values.
 >>> spheres_are_overlapping()
 True
 
-Change the position of `sphere_b` and verify that it still overlaps 
+Change the position of `sphere_b` and verify that it still overlaps
 with `sphere_a`.
 
 >>> sphere_b.position = (1, 1, 1)
 >>> spheres_are_overlapping()
 True
 
-Decrease the radius of `sphere_a` and confirm that the two spheres no 
+Decrease the radius of `sphere_a` and confirm that the two spheres no
 longer overlap.
 
 >>> sphere_a.radius = 0.1
 >>> spheres_are_overlapping()
 False
 
-At its core, the environment and all objects in the environment are 
-structured as Python mapping data types. The current state of the 
-environment can be represented, completely, by converting all objects 
+At its core, the environment and all objects in the environment are
+structured as Python mapping data types. The current state of the
+environment can be represented, completely, by converting all objects
 in the environment into dict records.
 
 >>> records = [o.data for o in environment.values()]
@@ -59,23 +59,19 @@ in the environment into dict records.
 """
 
 # Copyright 2022 Carnegie Mellon University Neuromechatronics Lab (a.whit)
-# 
+#
 # This Source Code Form is subject to the terms of the Mozilla Public
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at https://mozilla.org/MPL/2.0/.
-# 
+#
 # Contact: a.whit (nml@whit.contact)
 
-
 # Local imports.
-from .sphere import Sphere
 from .environment import Environment
-
+from .sphere import Sphere
 
 # Main.
-if __name__ == '__main__':
+if __name__ == "__main__":
     import doctest
-    doctest.testmod()
-    
-  
 
+    doctest.testmod()
